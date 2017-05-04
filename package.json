@@ -1,0 +1,21 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "\"An app that dynamically allows you to add flashcards and take a quiz for review on them\"",
+  "main": "flashcard.js",
+  "scripts": {
+    "test": "y"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://alexlovell149.github.io/Flashcard-Generator/"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Alex",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^3.0.6"
+  }
+}

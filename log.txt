@@ -1,0 +1,32 @@
+[
+
+{
+"Front":"What NFL team is in Dallas?",
+"Back":"Cowboys"
+},
+{
+"Front":"What is Batman's Alter ego?",
+"Back":"Bruce Wayne"
+},
+{
+"Front":"who is the king of the north?",
+"Back":"jon snow"
+},
+{
+"Front":"what pixar movie has tom hanks using his voice?",
+"Back":"toy story"
+},
+{
+"Front":"what 90s sitcom did will smith get his start in?",
+"Back":"fresh prince of bel-air"
+},
+{
+"Front":"what 80s rap group said you need to fight for your right to party?",
+"Back":"beastie boys"
+},
+{
+"Front":"who is nicknamed 'his airness'?",
+"Back":"michael jordan"
+}
+
+]
