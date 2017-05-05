@@ -1,0 +1,1 @@
+[{"text":"(Atlanta Braves) won the 1995 world series of baseball.","cloze":"Atlanta Braves"},{"text":"Arthur Fonzarelli is known as (the fonz) in happy days","makeMore":false},{"text":"will ferrell plays (ricky bobby) in talladega nights","makeMore":true},{"text":"Tyrannosaurus (rex)","makeMore":true},{"text":"(jose) cuervo","makeMore":false}]

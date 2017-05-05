@@ -36,10 +36,10 @@ var flashcards = function() {
         	quiz("user.json",0);
         }
         // choice for creating closed cards
-        //  else if (choice.userType === "Create-Cloze-Cards") {
-        //     readCards("user-cloze.json");
-        //     createCards(clozePrompt, "user-cloze.json");
-        // }
+         else if (choice.userType === "Create-Cloze-Cards") {
+            readCards("user-cloze.json");
+            createCards(clozePrompt, "user-cloze.json");
+        }
 
         // use pre-made cloze cards
          else if (choice.userType === "Use-Cloze-Cards") {
@@ -66,10 +66,14 @@ var readCards = function(logFile) {
     answerArray = [];
 
     fs.readFile(logFile, "utf8", function(err, data) {
-
-        console.log(data);
+    
+        
         var jsonContent = JSON.parse(data);
         
+
+        if (err) {
+            console.log(err);
+        }    
     
         for (var i = 0; i < jsonContent.length; i++) {
             answerArray.push(jsonContent[i]);
@@ -77,7 +81,7 @@ var readCards = function(logFile) {
     });
 };
 
-// createcards function taking the arguments prompttype which corresponds to clozetype or basictype
+// createcards function taking the arguments prompt type which corresponds to clozetype or basictype
 var createCards = function(promptType, logFile) {
 
     inquirer.prompt(promptType).then(function(answers) {
@@ -99,8 +103,9 @@ var createCards = function(promptType, logFile) {
 var quiz = function(logFile, x) {
 
     fs.readFile(logFile, "utf8", function(err, data) {
+        
 
-			console.log(data);
+			
             // parseing the data into JSON format
         var jsonContent = JSON.parse(data);
         	
@@ -110,18 +115,18 @@ var quiz = function(logFile, x) {
             // in the basiccard file
             if (jsonContent[x].hasOwnProperty("front")) {
                 // create new flash card contructor with front and back
-                var flashCard = new BasicCard(jsonContent[x].front, jsonContent[x].back);
+                var flashCard = new Basic(jsonContent[x].front, jsonContent[x].back);
                 var flashQuestion = flashCard.front;
                 var flashAnswer = flashCard.back.toLowerCase();
 
-                console.log(flashQuestion);
+                
            }
-            //  else {
+             else {
 
-            //     var flashCard = new Cloze(jsonContent[x].text, jsonContent[x].cloze);
-            //     var flashQuestion = flashCard.message;
-            //     var flashAnswer = flashCard.cloze.toLowerCase();
-            // }
+                var flashCard = new Cloze(jsonContent[x].text, jsonContent[x].cloze);
+                var flashQuestion = flashCard.message;
+                var flashAnswer = flashCard.cloze.toLowerCase();
+            }
 
 
             // inquirer will ask in the terminal the front card of the question and if you don't
